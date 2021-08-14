@@ -1,0 +1,38 @@
+<atlassian-plugin key="${atlassian.plugin.key}" name="${project.name}" plugins-version="2">
+    <plugin-info>
+        <description>${project.description}</description>
+        <version>${project.version}</version>
+        <vendor name="${project.organization.name}" url="${project.organization.url}" />
+        <param name="plugin-icon">images/icon.png</param>
+        <param name="plugin-logo">images/icon.png</param>
+    </plugin-info>
+
+    <!-- add our i18n resource -->
+    <resource type="i18n" name="i18n" location="IncludeContent"/>
+    
+    <!-- add our web resources -->
+    <web-resource key="IncludeContent-resources" name="IncludeContent Web Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
+        
+        <resource type="download" name="IncludeContent.css" location="/css/IncludeContent.css"/>
+        <resource type="download" name="IncludeContent.js" location="/js/IncludeContent.js"/>
+        <resource type="download" name="images/" location="/images"/>
+
+        <context>IncludeContent</context>
+    </web-resource>
+
+    <xhtml-macro
+            key='include-content'
+            name="include-content"
+            class="com.irontechspace.plugins.macro.IncludeContent"
+            icon="/download/resources/com.irontechspace.plugins.IncludeContent:IncludeContent-resources/images/icon.png"
+    >
+        <description>Include the excerpt from one page within another page</description>
+        <category name="confluence-content" />
+        <parameters>
+            <parameter name="page" type="confluence-content" required="true" />
+            <parameter name="shared-block-key" type="string" required="true" />
+        </parameters>
+    </xhtml-macro>
+
+</atlassian-plugin>
