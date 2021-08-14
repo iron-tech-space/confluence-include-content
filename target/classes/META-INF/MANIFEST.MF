@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+Atlassian-Build-Date: 2021-08-17T13:00:21+0300
+Atlassian-Plugin-Key: com.irontechspace.plugins.IncludeContent
+Bnd-LastModified: 1629194421848
+Build-Jdk: 1.8.0_302
+Built-By: anton
+Bundle-Description: This is the plugin for Include the excerpt from one 
+ page within another page in Confluence.
+Bundle-DocURL: https://github.com/iron-tech-space/confluence-include-con
+ tent
+Bundle-ManifestVersion: 2
+Bundle-Name: IncludeContent
+Bundle-SymbolicName: com.irontechspace.plugins.IncludeContent
+Bundle-Vendor: Iron tech space
+Bundle-Version: 1.0.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: com.irontechspace.plugins.api;version="1.0.0"
+Import-Package: org.springframework.osgi.context;resolution:=optional,or
+ g.springframework.osgi.service.exporter.support;resolution:=optional,or
+ g.springframework.osgi.service.importer.support;resolution:=optional,or
+ g.eclipse.gemini.blueprint.context;resolution:=optional,org.eclipse.gem
+ ini.blueprint.service.exporter;resolution:=optional,org.eclipse.gemini.
+ blueprint.service.exporter.support;resolution:=optional,org.eclipse.gem
+ ini.blueprint.service.importer.support;resolution:=optional,com.atlassi
+ an.confluence.core,com.atlassian.confluence.xhtml.api,com.atlassian.con
+ fluence.security,com.atlassian.confluence.content.render.xhtml,com.atla
+ ssian.confluence.macro,com.atlassian.confluence.pages,com.atlassian.con
+ fluence.user,com.atlassian.plugin.osgi.factory,com.atlassian.sal.api,co
+ m.atlassian.user,com.google.common.base,com.google.common.collect,com.i
+ rontechspace.plugins.api;version="[1.0,2)",javax.annotation,javax.injec
+ t,org.apache.commons.lang,org.apache.commons.logging,org.osgi.framework
+ ,org.slf4j,org.springframework.aop.support,org.springframework.beans,or
+ g.springframework.beans.factory,org.springframework.beans.factory.annot
+ ation,org.springframework.beans.factory.config,org.springframework.bean
+ s.factory.parsing,org.springframework.beans.factory.support,org.springf
+ ramework.beans.factory.xml,org.springframework.context.annotation,org.s
+ pringframework.core.io,org.springframework.stereotype,org.springframewo
+ rk.util,org.w3c.dom
+Originally-Created-By: Apache Maven Bundle Plugin
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.6))"
+Spring-Context: *
+Tool: Bnd-2.4.1.201501161923

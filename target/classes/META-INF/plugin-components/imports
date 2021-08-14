@@ -1,0 +1,5 @@
+com.atlassian.confluence.content.render.xhtml.Renderer
+com.atlassian.confluence.pages.PageManager
+com.atlassian.confluence.security.PermissionManager
+com.atlassian.confluence.xhtml.api.XhtmlContent
+com.atlassian.sal.api.ApplicationProperties

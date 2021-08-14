@@ -77,15 +77,15 @@ public class IncludeContent implements Macro {
                     if(permissionManager.hasPermission(AuthenticatedUserThreadLocal.getUser(), Permission.VIEW, page)){
                         outputHtml = renderer.render(macroDefinition.getBodyText(), conversionContext);
                     } else {
-                        outputHtml = "<div>You do not have permissions to view this content.</div>";
+                        outputHtml = getErrorHtml("Permissions denied", "You do not have permissions to view this content");
                     }
                 }
             }
             if(outputHtml == null) {
-                outputHtml = String.format("<div>Macro with name [%s] not found on page</div>", macroName);
+                outputHtml = getErrorHtml("Not found macro", String.format("Macro with name [%s] not found on page [%s]", macroName, pageName));
             }
         } else {
-            outputHtml = "<div>No macros found on the page</div>";
+            outputHtml = getErrorHtml("Not found any macros", "Not found any macros on the page. Select page with macros");
         }
         return outputHtml;
     }
@@ -93,4 +93,13 @@ public class IncludeContent implements Macro {
     public BodyType getBodyType() { return BodyType.NONE; }
 
     public OutputType getOutputType() { return OutputType.BLOCK; }
+
+    private String getErrorHtml (String title, String desc) {
+        return String.format("<div class=\"aui-message aui-message-error\">\n" +
+                "    <p class=\"title\">\n" +
+                "        <strong>%s</strong>\n" +
+                "    </p>\n" +
+                "    <p>%s</p>\n" +
+                "</div>", title, desc);
+    }
 }
